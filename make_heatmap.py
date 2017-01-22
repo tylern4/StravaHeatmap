@@ -9,7 +9,6 @@ except:
 
 def heatmap():
 	map_html = 'heatmap.html'
-
 	all_act = get_data()
 	print("Making heatmap")
 	heatmap = pd.concat(all_act, ignore_index=False)
@@ -23,6 +22,8 @@ def heatmap():
 
 	gmap = gmplot.GoogleMapPlotter(center_lat, center_lon, 13)
 	gmap.heatmap(heatmap['lat'],heatmap['lon'])
+	gmap.draw(map_html)
+
 
 
 if __name__ == '__main__':
