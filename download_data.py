@@ -32,11 +32,12 @@ def split_long(series):
 ### because I can't find another way.
 def total_num(client):
     activities = client.get_activities()
-    for i in range(1000):
+    for i in range(600):
         try:
             activities.next()
         except:
             return i
+    return i
 
 def get_strava(secret,ID):
     all_act = []
