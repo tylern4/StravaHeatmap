@@ -87,9 +87,9 @@ def get_data():
         return get_strava(secret,ID)
 
 if __name__ == '__main__':
-    #try:
-    get_data()
-    #    print("Done")
-    #except:
-    #    print("Error in getting data")
+    try:
+        get_data()
+        print("Done")
+    except:
+        print("Error in getting data")
 
