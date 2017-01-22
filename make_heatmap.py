@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from download_data import *
 import pandas as pd
 import gmplot
@@ -6,7 +7,7 @@ try:
 except:
 	import pickle
 
-def main():
+def heatmap():
 	map_html = 'heatmap.html'
 
 	all_act = get_data()
@@ -26,8 +27,8 @@ def main():
 
 if __name__ == '__main__':
 
-	#try:
-	main()
-		#print("Done")
-	#except:
-		#print("Error in main")
+	try:
+		heatmap()
+		print("Done")
+	except:
+		print("Error in making heatmap")

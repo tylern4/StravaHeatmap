@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from stravalib.client import Client
 import os.path
 import pandas as pd
@@ -75,3 +76,11 @@ def get_data():
             print("Make sure your api.key file is correct.")
         print("Downloading Data")
         return get_strava(secret,ID)
+
+if __name__ == '__main__':
+    try:
+        get_data()
+        print("Done")
+    except:
+        print("Error in getting data")
+
