@@ -28,18 +28,27 @@ def split_long(series):
     lon = series[1]
     return lon
 
+### This is a hack to get the total number of activities
+### because I can't find another way.
+def total_num(client):
+    activities = client.get_activities()
+    for i in range(1000):
+        try:
+            activities.next()
+        except:
+            return i
+
 def get_strava(secret,ID):
     all_act = []
     client = Client(access_token=secret)
-    me = client.get_athlete(ID)
+    tot = total_num(client)
 
+    me = client.get_athlete(ID)
     activities = client.get_activities()
 
-    for i in trange(71):
-        ################Still need to figure out how to get number instead of hardcoding
-        _a = activities.next()
-        _act_type = _a.type
+    for i in trange(tot):
         df = pd.DataFrame()
+        _a = activities.next()
 
         _streams = client.get_activity_streams(_a.id,types=types)
         for item in types:
@@ -78,9 +87,9 @@ def get_data():
         return get_strava(secret,ID)
 
 if __name__ == '__main__':
-    try:
-        get_data()
-        print("Done")
-    except:
-        print("Error in getting data")
+    #try:
+    get_data()
+    #    print("Done")
+    #except:
+    #    print("Error in getting data")
 
