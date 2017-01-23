@@ -1,14 +1,8 @@
-
 api.key
-
 all_act.csv
-
 all_act.pkl
-
 .ipynb_checkpoints/StravaTest-checkpoint.ipynb
-
 *.pyc
-
 *.html
-
 *.ipynb
+strava
