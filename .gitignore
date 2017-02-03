@@ -6,3 +6,4 @@ all_act.pkl
 *.html
 *.ipynb
 strava
+*.gpx
